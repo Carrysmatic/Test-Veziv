@@ -1,0 +1,247 @@
+[
+    {
+       "prompt": "Aplicatia sa contina 3 ramuri esentiale: 1. Sofer: harta cu traseul sau care sa contina punctele de ridicare si livrare. Timpul estimat pentru ambele . Posibilitatea de a prelua singur o solicitare de la un restaurant sau sa i se acorde livrari. Raport zilnic cu livrarile efectuate.Actualizare in timp real al parcursului sau catre client. 2. Restaurant: preluare comenzi, confirmarea lor si a statusului comenzii in timp real catre client. In orele de varf sa nu mai aiba clientul optiunea de a pune noi comenzi daca dureaza mai mult decat timpul estimat in aplicatie. Solictare sofer si optiunea de a vedea parcursul soferului. 3. Client : sa i-a la cunostinta toate detaliile legate de restaurant ( timp estimate de livrare , timp de preparare etc). sa adauge produse in cos , achizitie cu card sau numerar din aplicatie. Sa primeasca notificari cu fiecare parcurs al comenzii (confirmata, comanda urmeaza sa fie ridicata, comanda a fost ridicata, comanda livrata). Dupa plasarea si confirmarea si preluarea comenzii de catre sofer sa I se prezinte soferul, numarul de contact al acestuia si parcursul sau pe harta. FUNCTIE ADMIN : care poate observa activitatea celor 3 ramuri mentionate si poate efectua un raport pe fiecare. Firma are contracted oar cu restaurante . In aditie mai fac livrari de colete mici sau plicuri la solicitarea clientilor prin urmare ar trebui si o optiune de acest gen in aplicatie unde sa ofere cateva info despre colet (daca e plic sau e o cutie si ce demensiuni/greutate are).",
+       "response": " I. Scopul documentului: 
+
+Această ofertă preliminară este bazată pe informațiile pe care ni le-ați furnizat. Înainte de a începe efectiv dezvoltarea și de a vă putea oferi o estimare exactă a costurilor și timpului necesar, va fi necesar să parcurgem câteva etape esențiale de planificare
+
+1. Elaborarea unei diagrame logice pentru a defini arhitectura aplicației. 
+2. Crearea unei diagrame ER pentru a structura baza de date. 
+3. Realizarea unui design inițial în Figma pentru a elimina orice ambiguitate legată de interfața grafică. 
+
+Pentru începerea etapelor de mai sus, va fi necesar să semnăm un contract de colaborare și să achitați în avans prețul acestora: 
+
+Diagrama logică și diagrama ER: X Euro + TVA 
+Proiectul în Figma: X Euro + TVA 
+Acești bani se vor scădea din prețul total de dezvoltare odată acceptată oferta fermă. 
+
+Oferta de mai jos este doar orientativă și urmărește să vă ofere o perspectivă asupra modului în care operăm și a costurilor probabile. Pentru o ofertă și un timp de implementare exact, va fi necesar să completăm etapele de planificare menționate
+
+Definiții:
+React:
+React este o bibliotecă JavaScript pentru construirea interfețelor de utilizator. Este utilizată pentru crearea unor interfețe de utilizator reactive și eficiente din punct de vedere al performanței.
+
+Ionic:
+Ionic este un framework open-source pentru dezvoltarea de aplicații mobile hibride. Utilizează tehnologii web precum JavaScript/React/Angular  pentru a construi aplicații pentru platforme mobile, cum ar fi iOS și Android.
+
+NestJS:
+NestJS este un framework pentru dezvoltarea de aplicații server-side cu Node.js. Este construit pe baza arhitecturii modulare și utilizează TypeScript pentru a oferi un cod bine structurat și ușor de întreținut.
+
+Firebase:
+Firebase este o platformă de dezvoltare a aplicațiilor mobile. Furnizează servicii precum bază de date în timp real, autentificare, stocare și hosting, facilitând dezvoltarea rapidă și scalabilă a aplicațiilor.
+
+MongoDB:
+MongoDB este un sistem de gestionare a bazelor de date NoSQL, orientat pe documente. În loc de tabele, MongoDB folosește colecții și documente JSON-like, oferind flexibilitate și scalabilitate în stocarea datelor.
+
+API (Interfață de Programare a Aplicațiilor):
+API reprezintă un set de reguli și protocoale care permit comunicarea între diferite componente ale software-ului/aplicației. Este folosit pentru a permite integrarea între diferite aplicații sau servicii, facilitând schimbul de informații și funcționalități între ele.
+
+
+II. Propunere structură (335 Ore - 2 Programatori): 
+
+Dezvoltarea de bază:
+ 
+Dezvoltarea aplicațiilor folosind tehnologii moderne, cum ar fi React cu Ionic pentru interfața utilizatorului și MongoDB/Firebase pentru baza de date si NestJs pentru back-end.
+Conectare utilizatori cu autentificare OTP prin SMS/email pentru securitate sporită.
+
+Aplicație Client (iOS și Android): 
+Căutare Restaurante: Utilizatorii pot căuta restaurante pe baza locației, tipului de bucătărie.
+Plasare Comenzi: Interfață intuitivă pentru a selecta articole din meniul restaurantului și plasa comanda cu opțiuni precum adăugarea în coș și gestionarea comenzilor anterioare.
+Urmărire Livrare: Funcționalitate de monitorizare a comenzilor în timp real, cu notificări și informații despre stadiul livrării.
+Recenzii și Evaluări: Utilizatorii pot lăsa recenzii și evaluări pentru restaurantele și livrările lor.
+Legare API Stripe pentru Plata cu Cardul: Implementarea unei interfețe de plată folosind API-ul Stripe pentru a permite utilizatorilor să plătească cu cardul.
+Stocare Carduri: Opțiunea pentru utilizatori de a salva informațiile cardului pentru a facilita plățile ulterioare și a oferi o experiență de plată mai rapidă.
+Opțiune de Plată Ramburs: Posibilitatea pentru utilizatori de a alege opțiunea de plată la livrare.
+
+Aplicație Rider (iOS și Android):
+Acceptare Comenzi: Interfață pentru a accepta sau refuza comenzile, cu informații detaliate despre adresa de livrare și conținutul comenzii.
+Gestionare Livrări: Funcționalitate cu informații în timp real despre stadiul comenzii.
+Raportare Financiară: Funcționalitate pentru a genera rapoarte financiare, inclusiv livrari zilnice și lunare.
+Interfață de Navigare: Integrare cu sisteme de navigare pentru a ajuta riderul în timpul livrării (Legare API Google Maps).
+
+Aplicație Restaurant (iOS și Android):
+Gestionare Meniu: Interfață pentru a adăuga, șterge sau modifica articolele din meniu, inclusiv prețuri și disponibilitate.
+Confirmare Livrări: Posibilitatea de a confirma comenzile și de a oferi informații despre timpul de pregătire și de livrare.
+Raportare Financiară: Funcționalitate pentru a genera rapoarte financiare, inclusiv vânzări zilnice și lunare.
+
+Aplicație Admin (Doar Browser):
+Gestionare Utilizatori: Crearea și gestionarea conturilor de utilizator, inclusiv drepturile de acces.
+Gestionare Restaurante: Crearea și gestionarea restaurantelor.
+Gestionare Rider: Crearea și gestionarea riderilor.
+Monitorizare Comenzi: Interfață pentru a monitoriza comenzile în timp real și a rezolva problemele semnalate de utilizatori.
+Rapoarte și Analize: Generarea de rapoarte și analize financiare, inclusiv vânzări zilnice și lunare.
+
+III. Sugestii suplimentare (24 ore de munca * 2 programatori): 
+Generarea automată a facturilor: Legare la API SmartBill pentru a genera automat facturile pentru rideri, restaurante și clienți
+
+IV. Pret și timp de implementare: 
+
+*Fiecare punct poate fi supus modificării, editării sau realizării într-un mod mai sumar, cu reducerea funcționalităților, în vederea obținerii unei costuri mai reduse.
+
+*Prețul este orientativ și nu trebuie să fie limitativ; în cazul în care bugetul beneficiarului este mai restrâns decât oferta noastră în faza de proiectare, putem identifica alternative la costuri inferioare prin integrarea unui număr redus de funcționalități.
+
+Timp estimat de livrare: 
+Dezvoltare de bază împreună cu aplicațiile Client, Rider, Restaurant și Admin (355 Ore cu 2 Programatori): X Euro + TVA
+
+Dezvoltare de bază împreună cu aplicațiile Client, Rider, Restaurant și Admin și sugestii suplimentare (379 Ore cu 2 Programatori): X Euro + TVA
+
+Timpul de livrare este influențat de complexitatea proiectului și cerințele dumneavoastră. Vom lucra în strânsă colaborare cu dumneavoastră pentru a respecta termenele stabilite.
+
+*În cadrul actualei oferte, beneficiați de serviciile a doi programatori specializați în limbajul de programare necesar pentru proiectul dumneavoastră, un manager de proiect care va concepe și coordona proiectul, precum și un grafician responsabil de conceperea interfeței utilizatorului/aplicației. Fiecare echipă din cadrul societății noastre dispune de suportul unui mentor, responsabil de supravegherea și asistarea programatorilor. Prețul pentru această echipă este de X de euro pe oră. 
+
+Termeni de achiziție:
+​
+Această ofertă este strict confidențială. Veziv IT Services SRL nu oferă permisiunea de a împărtăși detalii cu terțe părți.
+Prețurile sunt fără TVA. "
+    },
+    {
+        "prompt": "Comenzile se depun doar online. Moment in care este preluata comanda pentru a verifica stocul de materiale,costurile cu care au fost achizitionate si ce resturi de material pot fi folosite in lucrarea solicitata, apoi se realizeaza o oferta de pret care este trimisa catre client. Daca clientul accepta oferta propusa se realizeaza o comanda pe diferenta de material necesare si comanda este data spre prelucrare. Intre timp clientul primeste diverse documente care ii sunt necesare fie ca acesta cunoste acest aspect sau nu. Cum ar fi : Aviz Calitate, SSM, Certificat Performanta si Factura . 1. In momentul in care un client depune online o comanda ERP-ul sa extraga din acea comanda in mod automat un necesar de material; 2. Sa existe o sectiune de “RESTURI MATERIALE” unde sa fie intrudose pe marimi si bucati in sistem iar la momentul unei noi comenzi dupa ce se sugereaza de catre ERP necesarul de materiale sa existe optiunea automata de interogare a stocului curent, a resturilor reutilizabile de materiale si de comenzile deschise. ( exemplu : 1500buc/articol din care 1300buc/articol rezervate pt comenzile deschise si raman pt noua comanda 200buc/articol si 3 resturi care se potrivesc ca dimensiune pt noua comanda). Recapitulare : in momentul in care exista o noua comanda , programul sa extraga automat din stoc necesarul si daca e ceva din resturile de material sa se potriveasca sa se extraga si acelea, astfel incat sa ramana strict necesarul unei noi comenzicatre furnizor.Aceste informatii fiind necesare inainte de a plasa catre furnizor o coamnda cu necesar. 3. In momentul in care comanda este finalizata si este pregatita pentru a fi trimisa catre client anuumite produse se trimit asamblate, insa altele se trimit pe bucati. Angajatul care face inventarul inainte de livrare sa aiba posibilitatea de a trece in ERP componentele lipsa, astfel incat cei care se ocupa de gestiune sa vada in timp real acest lucru sis a efectueze o coamnda pt ele catre furnizor. 4. Pentru partea de documente : documentele mentionate in INTRO sa se automatizeze in stilul in care avem noi in ERP la acordul de confidentialitate. 5. CASH-FLOW: sold curent al firmei in banca si viitoarele plati si incasari impartite pe OP si BO (biletele la ordin sa fie cu reminder la inceput de saptamana- fie ca incaseaza fie ca plateste el). In momentul in care firma in cauza efectueaza un BO fiind un buget stabilit lunar pt ele , programul sa nu ii permita ca din greseala sa depaseasca acel buget in momentul in care noteaza in ERP un nou BO de efectuat. NOTA: singurul program software cu care se lucreaza acum este WinMENTOR",
+        "response": "I. Scopul documentului: 
+
+Această ofertă preliminară este bazată pe informațiile pe care ni le-ați furnizat în același timp înainte de a începe efectiv dezvoltarea și de a vă putea oferi o estimare exactă a costurilor și timpului necesar, va fi necesar să parcurgem câteva etape esențiale de planificare
+
+1. Elaborarea unei diagrame logice pentru a defini arhitectura aplicației. 
+2. Crearea unei diagrame ER pentru a structura baza de date. 
+3. Realizarea unui design inițial în Figma pentru a elimina orice ambiguitate legată de interfața grafică. 
+
+Pentru începerea etapelor de mai sus, va fi necesar să semnăm un contract de colaborare și să achitați în avans prețul acestora: 
+
+Diagrama logică și diagrama ER: X Euro + TVA 
+Proiectul în Figma: X Euro + TVA 
+Acești bani se vor scădea din prețul total de dezvoltare odată acceptată oferta fermă. 
+
+Oferta de mai jos este doar orientativă și urmărește să vă ofere o perspectivă asupra modului în care operăm și a costurilor probabile. Pentru o ofertă și un timp de implementare exact, va fi necesar să completăm etapele de planificare menționate
+
+Scopul acestui document este de a prezenta o ofertă pentru dezvoltarea unui CRM/ERP personalizat conform cerințelor.
+
+Definiții:
+- CRM (Customer Relationship Management): CRM este un acronim pentru "Customer Relationship Management" sau "Gestionarea Relațiilor cu Clienții" în română. Este o strategie și un set de tehnologii utilizate pentru a gestiona relațiile și interacțiunile cu clienții. Scopul principal al unui sistem CRM este să îmbunătățească relațiile cu clienții, să optimizeze procesele de vânzare și marketing și să ofere o mai bună experiență generală pentru clienți.
+- ERP (Enterprise Resource Planning): ERP este un acronim pentru "Enterprise Resource Planning" sau "Planificarea Resurselor Enterprise" în română. Este un sistem de software care ajută organizațiile să gestioneze și să integreze eficient toate procesele lor de afaceri, inclusiv contabilitatea, resursele umane, gestionarea stocurilor, producția, vânzările și multe altele. Scopul principal al unui sistem ERP este să faciliteze fluxurile de lucru interne și să ofere o imagine consolidată și în timp real a resurselor și proceselor organizației.
+
+II. Propunere structură: 
+
+1. Secțiune de Comenzi și Stocuri:
+
+Implementarea unui sistem de gestionare a comenzilor online, inclusiv verificarea stocurilor de materiale și costurile de achiziție (Înainte de a plasa comanda, se va genera automat o ofertă. Administratorii vor valida oferta, iar apoi aceasta va fi trimisă către client printr-un buton dedicat. Comanda va fi procesată doar atunci când clientul acceptă oferta, moment în care stocurile vor fi rezervate timp de 2 zile, astfel încât materialele să fie disponibile în momentul acceptării ofertei de către client).
+Sistem de gestionare a resturilor de materiale, unde informațiile despre dimensiuni și cantități pot fi introduse și monitorizate.
+Automatizarea extragerii necesarului de materiale din stocuri și din resturile disponibile pentru fiecare comandă nouă.
+- Timp de dezvoltate: 25 zile * 2 programatori
+
+2. Secțiune de Livrare și Gestiune:
+Implementarea unui sistem de gestionare a livrărilor care poate manipula produsele asamblate sau trimise pe bucăți cu posibilitatea angajaților care efectuează inventarul înainte de livrare de a introduce în ERP componentele lipsă.
+Sincronizarea în timp real a stocurilor și notificare pentru generarea a comenzilor către furnizori pentru componente lipsă.
+- Timp de dezvoltate: 15 zile * 2 programatori
+
+3. Automatizarea Documentelor:
+Implementarea unui sistem de automatizarea generării documentelor necesare, cum ar fi Avize de Calitate, documente SSM, Certificate de performanță.
+- Timp de dezvoltate: 5 zile * 2 programatori
+
+4. Gestionarea Cash-Flow-ului:
+Monitorizarea soldului curent al firmei în bancă și urmărirea viitoarelor plăți și încasări, împărțite pe ordine de plată (OP) și bilete la ordin (BO) automatizare prin importul de fișiere CSV din extrasele băncii.
+Implementarea unui sistem de gestionare a bugetelor (BO), cu posibilitatea de a seta și monitoriza limitele de cheltuieli pentru fiecare lună. (Notificări și avertizări pentru a preveni depășirea bugetului stabilit.)
+- Timp de dezvoltate: 20 zile * 2 programatori
+
+5. Integrarea cu WinMentor:
+Integrarea cu Mentor, programul software actual, pentru a asigura o tranziție eficientă a datelor și proceselor.
+- Timp de dezvoltate: 12 zile * 1 programator
+
+III. Sugestii suplimentare:
+Implementarea unui API bancar pentru automatizarea operațiunilor de intrare și ieșire din contul bancar al firmei, cu scopul de a sincroniza automat o parte din datele financiare direct de pe cont.
+- Timp de dezvoltate: 10 zile * 1 programator
+
+IV. Pret și timp de implementare: 
+
+Timp estimat de livrare: 
+71 zile * 2 programatori (568 Ore lucratoare dezvoltare bază): X Euro + TVA 
+10 zile * 1 programator (secțiunea sugestii = 80 Ore lucratoare): X Euro + TVA 
+Timpul de livrare este influențat de complexitatea proiectului și cerințele dumneavoastră. 
+Vom lucra în strânsă colaborare cu dumneavoastră pentru a respecta termenele stabilite."
+
+    },
+    {
+        "prompt": " Automatizare documente in ERP unde sa primeasca automat urmatorul nr de serie si sa se tina cont de firma producatoare sau client; Au licenta achizitioata de la ONEDRIVE. 2. Realizare baza de date (import excel) in 2 categorii : cumparatori si furnizori; 3. Produse : adaugate din excel cu anul de productie, cod de identificare, denumire, paametrii de calitate lot ( doresc un filtru pe acest modul) 4. Cantitate : transporta doar TONE si este de 3 feluri : cantitate efectiva, cantitate tolerate (5, 10%) si cantitate la optiunea cuiva (comparator sau furnizor) 5. Livrare conditii: - incoterms („Incoterms” reprezintă prescurtarea pentru International Commercial Terms. Publicată pentru prima dată în 1936, reprezintă de fapt un set de 11 reguli, care definesc responsabilitatea în cadrul tranzacțiilor internaționale.) - Locatie ( aici se doreste onlista principala automatizata si posibilitatea de a adauga manual ) deoarece anumiti furnizori ofera mereu transport pana intr-un punct(acelasi gen vama) de acolo revine in responsailitatea clientului 6. Perioada de livrare : aleasa fie de comparator fie de furnizor. 7. Pret: sunt de 2 feluri . Fix stabilit din perioada de negociere si semnare ctr in 3 valute RON, USD si EUR. Pret matif ( este un pret la o data certa). Adica se semneaza ctr cu pret matif din data de… 8. Termen de plata : automatizare daca clientul e din RO pt moneda ( programul sa puna automat in LEI) si selectare manuala a perioadei sau sugestii de genul 30 zile. Pt ctr negociate diverse variante in functie de produs, origine si transport. 9. Comision la partea de ctr ( pt fiecare ctr inregistrat sa se adauge comisionul perceput si din partea cui , furnizor, comparator sau ambii si agentul care se ocupa ). Sa existe posibilitatea de a face update pe fiecare ctr cu status exact de genul : documente trimis apoi document semnat. Automatizare comisioane in functie de setarile initiale cu cantitatea pe care se factureaza si moneda. 10. Raportare : pe contract, pe furnizor si pe comparator. 11. Facturi: evidenta facturi parteneri, in special pt ca facturile de la furnizori trec in registrul lor de evidente si sa poata observa cand un client a achitat. Pe cantitati, pret, valori daca cumva se poate automatiza ceva. Evidenta facturi proprii, lucreaza cu SMARTBILL dar vor schimba de la 1 Ian cu E-FACTRA.
+ ",
+        "response": " I. Scopul documentului: 
+
+Această ofertă preliminară este bazată pe informațiile pe care ni le-ați furnizat. Înainte de a începe efectiv dezvoltarea și de a vă putea oferi o estimare exactă a costurilor și timpului necesar, va fi necesar să parcurgem câteva etape esențiale de planificare
+
+1. Elaborarea unei diagrame logice pentru a defini arhitectura aplicației. 
+2. Crearea unei diagrame ER pentru a structura baza de date. 
+3. Realizarea unui design inițial în Figma pentru a elimina orice ambiguitate legată de interfața grafică. 
+
+Pentru începerea etapelor de mai sus, va fi necesar să semnăm un contract de colaborare și să achitați în avans prețul acestora: 
+
+Diagrama logică și diagrama ER: X Euro + TVA 
+Proiectul în Figma: X Euro + TVA 
+Acești bani se vor scădea din prețul total de dezvoltare odată acceptată oferta fermă. 
+
+Oferta de mai jos este doar orientativă și urmărește să vă ofere o perspectivă asupra modului în care operăm și a costurilor probabile. Pentru o ofertă și un timp de implementare exact, va fi necesar să completăm etapele de planificare menționate
+
+Definiții:
+- CRM (Customer Relationship Management): CRM este un acronim pentru "Customer Relationship Management" sau "Gestionarea Relațiilor cu Clienții" în română. Este o strategie și un set de tehnologii utilizate pentru a gestiona relațiile și interacțiunile cu clienții. Scopul principal al unui sistem CRM este să îmbunătățească relațiile cu clienții, să optimizeze procesele de vânzare și marketing și să ofere o mai bună experiență generală pentru clienți.
+- ERP (Enterprise Resource Planning): ERP este un acronim pentru "Enterprise Resource Planning" sau "Planificarea Resurselor Enterprise" în română. Este un sistem de software care ajută organizațiile să gestioneze și să integreze eficient toate procesele lor de afaceri, inclusiv contabilitatea, resursele umane, gestionarea stocurilor, producția, vânzările și multe altele. Scopul principal al unui sistem ERP este să faciliteze fluxurile de lucru interne și să ofere o imagine consolidată și în timp real a resurselor și proceselor organizației.
+ 
+II. Propunere structură (255 ore * 2 programatori): 
+
+1)    Dezvoltarea ERP de bază (30 ore * 2 programatori):
+ 
+a)    Dezvoltarea unui sistem ERP folosind tehnologii moderne, cum ar fi React pentru interfața utilizatorului și MongoDB/Firebase pentru baza de date.
+b)   Conectare utilizatori cu autentificare OTP prin SMS/email pentru securitate sporită.
+  
+2)    Aplicatie admin ( 225 ore * 2 programatori):
+ 
+a)    Sistem de documente (125 ore x 2 programatori):
+i)      Un sistem de generare documente automatizat bazat pe draft-uri, fiecare cu un status propriu, cu o indentare automată a seriei pentru optimizarea timpului de lucru.
+Notă: Acest sistem vă permite să creați orice tip de document sau aviz prin intermediul Google Docs (o aplicație online gratuită lansată de Google, similară programului Word). În Google Docs se creează primul șablon. Acest sistem poate fi folosit pentru a genera mai multe tipuri de documente, cum ar fi contracte, acte adiționale, etc. În momentul generării unui document sau aviz, se vor putea lega datele salvate din profilul clienților, precum și datele salvate despre produse, pentru a genera documentul pe baza șablonului salvat în sistem. Acest sistem, după crearea șabloanelor, este util pentru toate documentele/avizele care trebuie generate periodic pentru clienți/produse diferite, doar printr-un clic.
+
+ii)    Sistem de adăugare clienți/furnizori în platformă și de a crea profilul clientului/furnizorului, unde se poate vedea istoricul, următoarele plăți și contractele generate în baza draftului, cu statusuri pentru fiecare contract/act. Legare API ANAF pentru a culege datele în mod automat din baza de date dacă clientul/furnizorul este o firmă din România.
+
+iii)    Diverse tipuri de documente disponibile și campuri personalizate (ex: comision, tip de pret, termen de plata, moneda, etc.).
+
+iv)   Sistem de monitorizare a facturilor proprii și de la parteneri.
+
+v)   Istoric al comenzilor, cu toate informațiile relevante pentru comenzi.
+ 
+b)    Monitorizarea produselor (68 ore * 2 programatori):
+i)      Sistem de adaugare, stergere, modificare și filtrare a produselor cu diverse campuri personalizate unde este cazul (ex: cantitate maxima/minima, livrare in anuite locatii, perioada de livrare etc.).
+ii)   Sistem de calcul automat, în baza contractelor, a cantității și a monedei (RON, USD, EUR), cu conversiile din EURO în RON și din USD în RON, în baza cursului valutar actual de la BRD.
+ 
+c)    Sistem de rapoarte (24 ore * 2 programatori):
+i)      Sistem de rapoarte pentru furnizori, clienti si contracte care masoara diferiti parametri relevanti si pune la dispozitie informatii importante într-o interfata intuitiva.
+
+d)    Sistem de facturare (8 ore * 2 programatori):
+i)      Legare API de SmartBill sau alt soft de facturare pentru a genera facturile ușor și pentru a le trimite către E-Factura (SmartBill are integrată trimiterea facturilor către SPV E-Factura pentru toate facturile prin apăsarea unui buton).
+
+III. Sugestii suplimentare (35 Ore - 2 Programatori ):
+a)    Sistem de import/export csv (20 Ore - 2 Programatori)
+i)      Sistem de import și export al datelor din platformă prin CSV. Acest sistem este util pentru a putea importa mai ușor clienți/produse deja existenți sau pentru a exporta CSV-uri.
+
+b)    Semnătura electronică (15 Ore - 2 Programatori)
+i)      Integrare API pentru semnătura electronică. Se va trimite către client un link împreună cu contractul, unde clientul/furnizorul va putea să semneze actul cu semnătura electronică (semnătura electronică este recunoscută la nivel mondial).
+
+c)    Aplicație client (35 Ore - 2 Programatori)
+i)      Clienții vor avea posibilitatea de a se conecta la aplicație și de a vizualiza doar anumite informații legate de contul propriu. Vom dezvolta un sistem de permisiuni și grade, unde fiecărui utilizator îi vor fi atribuite în mod automat sau manual anumite permisiuni/grade. Accesul la informații va fi determinat de permisiunile/gradul acordat.
+ 
+IV. Pret și timp de implementare: 
+
+*Fiecare punct poate fi supus modificării, editării sau realizării într-un mod mai sumar, cu reducerea funcționalităților, în vederea obținerii unei costuri mai reduse.
+
+*Prețul este orientativ și nu trebuie să fie limitativ; în cazul în care bugetul beneficiarului este mai restrâns decât oferta noastră în faza de proiectare, putem identifica alternative la costuri inferioare prin integrarea unui număr redus de funcționalități.
+
+ Timp estimat de livrare:
+
+Dezvoltarea de bază și Aplicatie admin.  (255 Ore cu 2 Programatori): X Euro + TVA
+
+Dezvoltarea de bază și Aplicatie admin, inclusiv integrarea sugestiilor suplimentare. (255 Ore + 60 Ore cu 2 Programatori): X Euro + TVA
+
+Timpul de livrare este influențat de complexitatea proiectului și cerințele dumneavoastră. Vom lucra în strânsă colaborare cu dumneavoastră pentru a respecta termenele stabilite.
+
+
+*În cadrul actualei oferte, beneficiați de serviciile a doi programatori specializați în limbajul de programare necesar pentru proiectul dumneavoastră, un manager de proiect care va concepe și coordona proiectul, precum și un grafician responsabil de conceperea interfeței utilizatorului/aplicației. Fiecare echipă din cadrul societății noastre dispune de suportul unui mentor, responsabil de supravegherea și asistarea programatorilor. Prețul pentru această echipă este de X de euro pe oră.
+
+Termeni de achiziție:
+​
+Această ofertă este strict confidențială. Veziv IT Services SRL nu oferă permisiunea de a împărtăși detalii cu terțe părți.
+Prețurile sunt fără TVA."
+    }
+]
